@@ -16,7 +16,7 @@ public class SellProduct {
         this.productRepository = productRepository;
     }
 
-    public Product ejecutar (Long id, int cantidad) {
+    public int ejecutar (Long id, int cantidad) {
         if(cantidad <=0){throw new InvalidProductException("La cantidad debe ser mayor que 0");}
         Product product = productRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Producto no encontrado"));
         if (product.getStock() < cantidad) {
