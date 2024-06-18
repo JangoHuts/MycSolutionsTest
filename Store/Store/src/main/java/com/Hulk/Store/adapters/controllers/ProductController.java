@@ -46,7 +46,7 @@ public class ProductController {
     }
 
     @PostMapping("/SellProduct/{id}")
-    public int sellproducts(@PathVariable Long id, @RequestParam int cantidad){
+    public Product sellproducts(@PathVariable Long id, @RequestParam int cantidad){
         return sellProduct.ejecutar(id, cantidad);
     }
      @GetMapping("/GetStock/{id}")
